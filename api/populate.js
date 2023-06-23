@@ -8,6 +8,7 @@ const jsonPerguntas = require('./perguntas.json')
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI)
+    //Remover linha abaixo se quiser que registros anteriores não sejam apagados
     await Pergunta.deleteMany()
     await Pergunta.create(jsonPerguntas)
     console.log('Sucesso!')

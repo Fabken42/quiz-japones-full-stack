@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('./cabecalho.css');
+@import url('./telaCarregamento.css');
+@import url('./quiz.css');
+@import url('./loginRegister.css');
+@import url('./paginaNaoEncontrada.css');
+
+:root {
+    --cabecalho-bg: #569DAA;
+    --main-bg: #577D86;
+    --texto: #f5f5f5;
+    --quiz-pergunta-bg: #82c5cf;
+    --quiz-pergunta: #0e454e;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--main-bg);
+    width: 100vw;
+    height: 100vh;
+}

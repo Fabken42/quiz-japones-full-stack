@@ -5,4 +5,8 @@ class CustomAPIError extends Error {
   }
 }
 
-module.exports = CustomAPIError
+const createCustomError = (msg, statusCode) => {
+  return new CustomAPIError(msg, statusCode)
+}
+
+module.exports = {CustomAPIError, createCustomError}

@@ -3,8 +3,13 @@ import { faFaceGrinStars, faFaceGrinWide, faSmile, faMeh, faFaceFrownOpen, faFro
 import { useEffect, useState } from 'react';
 import Resposta from '../Resposta';
 import CarregandoPage from './CarregandoPage';
+import { useContext } from 'react';
+import { UserContext } from "../UserContext.js"
 
 export default function IndexPage() {
+    const {userInfo} = useContext(UserContext)
+    const existeNome = userInfo?.nome !== undefined
+
     const iconeMapa = [
         { emoji: faSadTear, cor: 'rgb(165, 0, 255)' },
         { emoji: faFrown, cor: 'rgb(255, 0, 0)' },
@@ -13,7 +18,7 @@ export default function IndexPage() {
         { emoji: faSmile, cor: 'rgb(200, 255, 0)' },
         { emoji: faFaceGrinWide, cor: 'rgb(0, 255, 32)' },
         { emoji: faFaceGrinStars, cor: 'rgb(0, 174, 255)' }]
-    const situacao = 6;//teste
+    const situacao = 6;//0 - 7
     const icon = iconeMapa[situacao];
 
     const [perguntas, setPerguntas] = useState([])
@@ -24,7 +29,7 @@ export default function IndexPage() {
     useEffect(() => {
         const fetchPerguntas = async () => {
             try {
-                const resposta = await fetch('http://localhost:4200/api')
+                const resposta = await fetch('http://localhost:4200/api/perguntas')
                 const dados = await resposta.json()
                 setPerguntas(dados.perguntas)
                 setOptCorreta(Math.floor(Math.random() * 4))
@@ -54,12 +59,12 @@ export default function IndexPage() {
                 respostaErradaEl.classList.remove('resposta-errada');
                 respostaCertaEl.classList.remove('resposta-certa');
                 setJogadas(jogadas+1)
-            }, 1000);
+            }, 1200);
         } else {
             setTimeout(() => {
                 respostaCertaEl.classList.remove('resposta-certa');
                 setJogadas(jogadas+1)
-            }, 1000);
+            }, 1200);
         }
     }
 
@@ -71,9 +76,9 @@ export default function IndexPage() {
     return (
         <div className="quiz-container">
             <div className='pergunta-container'>
-                <div className='emoji'><FontAwesomeIcon icon={icon.emoji} size="2x" color={icon.cor} /></div>
+                {existeNome && <div className='emoji'><FontAwesomeIcon icon={icon.emoji} size="2x" color={icon.cor} /></div>}
                 <h2 className='pergunta'>{perguntas.length > 0 ? perguntas[optCorreta].pergunta : ''}</h2>
-                <div className='emoji'><FontAwesomeIcon icon={icon.emoji} size="2x" color={icon.cor} /></div>
+                {existeNome && <div className='emoji'><FontAwesomeIcon icon={icon.emoji} size="2x" color={icon.cor} /></div>}
             </div>
             <div className="image-grid">
                 {respostas}

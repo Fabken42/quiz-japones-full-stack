@@ -1,7 +1,5 @@
 const Pergunta = require('../models/Pergunta')
 const asyncWrapper = require('../middleware/async')
-const { createCustomError } = require('../errors/custom-error')
-
 
 const pegaPerguntasAleatorias = asyncWrapper(async (req, res) => {
   const perguntas = await Pergunta.aggregate([
@@ -11,15 +9,11 @@ const pegaPerguntasAleatorias = asyncWrapper(async (req, res) => {
     { $unwind: '$perguntas' }, // Desconstrói o array de perguntas
     { $replaceRoot: { newRoot: '$perguntas' } } // Define cada pergunta como novo documento raiz
   ])
+
   res.status(200).json({ perguntas })
 })
 
 
-const criaPergunta = asyncWrapper(async (req, res) => {
-  const pergunta = await Pergunta.create(req.body)
-  res.status(201).json({ pergunta })
-})
-
 module.exports = {
-    pegaPerguntasAleatorias, criaPergunta
+  pegaPerguntasAleatorias
 }

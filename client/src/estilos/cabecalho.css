@@ -1,0 +1,28 @@
+
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: var(--cabecalho-bg);
+    color: var(--texto);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-size: 25px;
+}
+
+.link:visited {
+    color: var(--texto);
+}
+
+.link-login, .link-cadastro {
+    margin: 0 6px;
+    color: var(--texto);
+}
+
+.link-logout:hover{
+    cursor: pointer;
+}

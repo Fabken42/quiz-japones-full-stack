@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser')
 
 const perguntas = require('./routes/perguntas');
 const usuario = require('./routes/usuario')
+const progresso = require('./routes/progresso')
 const connectDB = require('./db/connect');
 const express = require('express');
 const cors = require('cors')
@@ -25,7 +26,8 @@ app.use(
 
 //http://localhost:4200/api/
 app.use('/api/perguntas', perguntas)
-app.use('/api/usuario',usuario) 
+app.use('/api/usuario',usuario)
+app.use('/api/progresso',progresso)
 
 
 app.use(notFoundMiddleware);

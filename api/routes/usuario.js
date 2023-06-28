@@ -10,4 +10,5 @@ router.route('/login').post(login)
 router.route('/logout').post(logout)
 router.route('/perfil').get(validaPerfil)
 
+
 module.exports = router

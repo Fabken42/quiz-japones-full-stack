@@ -32,7 +32,7 @@ export default function Header() {
 
   return (
     <header className="cabecalho">
-      <Link to="/" className="link logo">Quiz de Japonês</Link>
+      <Link to="/" className="link logo">Quiz de Japonês - Fabrício K.</Link>
       <nav>
         {nome && <>
           <a className='link-logout' onClick={logout}>Sair</a>

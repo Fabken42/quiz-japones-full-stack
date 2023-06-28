@@ -1,5 +1,4 @@
 import { useState } from "react"
-import axios from 'axios'
 
 export default function RegisterPage() {
     const [nome, setNome] = useState('')
@@ -8,22 +7,29 @@ export default function RegisterPage() {
     async function register(ev) {
         ev.preventDefault();
 
-        if (nome.length < 5) {
+        if (nome.length < 5 || senha.length < 5) {
             alert('Nome e senha devem ter pelo menos 5 caracteres');
             return;
         }
 
         try {
-            const response = await axios.post('http://localhost:4200/api/usuario/cadastrar', { nome, senha });
-            if (response.status !== 200) {
-                alert('Falha ao cadastrar!');
+            const response = await fetch('http://localhost:4200/api/usuario/cadastrar', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ nome, senha })
+            });
+          
+            if (response.ok) {
+              alert('Cadastro feito com sucesso!');
             } else {
-                alert('Cadastro feito com sucesso!');
+              alert('Falha ao cadastrar!');
             }
-        } catch (error) {
+          } catch (error) {
             console.log(error);
             alert('Falha ao cadastrar!');
-        }
+          }          
     }
 
     return (

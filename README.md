@@ -17,7 +17,7 @@ Passo 2: Configurar o backend
 
 Abra um terminal e navegue até a pasta "api" do projeto.
 
-Crie um arquivo .env na pasta "api" e adicione as seguintes variáveis de ambiente, substituindo os valores pelos seus próprios:
+Crie um arquivo .env na pasta "api" e adicione as seguintes variáveis de ambiente, substituindo apenas os valores MONGO_URI e SECRET_KEY:
 
 PORT=4200
 MONGO_URI=<URL_DO_MONGODB>

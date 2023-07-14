@@ -35,4 +35,4 @@ Abra outro terminal, navegue até a pasta "client" e execute o comando "npm inst
 
 Inicie o servidor de desenvolvimento do frontend com o comando "npm start"
 
-O servidor de desenvolvimento será iniciado e o aplicativo será aberto em seu navegador padrão.
+Para rodar instale e ative a extensão <a href="https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf/related" target="_blank">Allow CORS</a>

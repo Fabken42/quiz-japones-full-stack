@@ -24,9 +24,9 @@ MONGO_URI=<STRING_CONEXAO_MONGODB>
 SECRET_KEY=<CRIE_SUA_PRÓPRIA_CHAVE_SECRETA>
 
 Instale as dependências do backend executando o comando "npm install"
-Após a conclusão da instalação, execute o comando "npm run populate" para popular o banco de dados com os registros iniciais:
+Após a conclusão da instalação, execute o comando "npm run populate" para popular o banco de dados com os registros iniciais.
 
-Inicie o servidor backend com o seguinte comando "npm start"
+Inicie o servidor backend com o comando "npm start"
 O servidor backend será executado na porta especificada (4200).
 
 Passo 3: Configurar o frontend

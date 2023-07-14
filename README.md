@@ -21,7 +21,7 @@ Crie um arquivo .env na pasta "api" e adicione as seguintes variáveis de ambien
 
 PORT=4200
 MONGO_URI=<STRING_CONEXAO_MONGODB>
-SECRET_KEY=<CHAVE_SECRETA>
+SECRET_KEY=<CRIE_SUA_PRÓPRIA_CHAVE_SECRETA>
 
 Instale as dependências do backend executando o comando "npm install"
 Após a conclusão da instalação, execute o comando "npm run populate" para popular o banco de dados com os registros iniciais:

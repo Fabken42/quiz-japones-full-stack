@@ -2,7 +2,7 @@
 
 Pré-requisitos
 Certifique-se de ter "Node.js versão 12 ou superior" instalado em seu sistema.
-Crie um projeto no mongoDB Atlas e anote a string de conexão para utilizar no arquivo .env
+Crie um projeto no mongoDB Atlas e anote senha de usuário e string de conexão para utilizar no arquivo .env
 
 Passo 1: Clonar o repositório
 ------------------------------------------------------------------------------------------------------------------
